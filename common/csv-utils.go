@@ -9,10 +9,10 @@ import (
 )
 
 // ReadFile reads all recorrds from a CSV file, Illegal records are  be ignored
-func ReadFile(fileName string) [][]string {
+func ReadFile(fileName string) (record [][]string, err error) {
 	f, err := os.Open(fileName)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 	r := csv.NewReader(bufio.NewReader(f))
 	records := [][]string{}
@@ -27,5 +27,5 @@ func ReadFile(fileName string) [][]string {
 		}
 		records = append(records, record)
 	}
-	return records
+	return records, err
 }
