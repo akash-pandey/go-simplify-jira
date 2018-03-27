@@ -1,2 +1,4 @@
-akash,pandey,india,123
-test,csv,gurgaon,456
+#ACTION,KEY,PARENT_KEY,TITLE,DESCRIPTION,ASSIGNEE,ORIGINAL_ESTIMATES, JSON_PAYLOAD
+New,,MCPU-AAAA,Test Ticket,Sample Body of Test Ticket,akash.pandey,1d,
+New,,MCPU-BBBB,Test Ticket,Sample Body of Test Ticket,akash.pandey,1d,
+MODIFY,MCPU-AAAA,,,,,,"{assignee: rajesh.bhatt, originalEstimates: 2d}"

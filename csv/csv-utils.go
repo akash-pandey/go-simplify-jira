@@ -1,4 +1,4 @@
-package common
+package csv
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-// ReadFile reads all recorrds from a CSV file, Illegal records are  be ignored
+// ReadFile reads all recorrds from a CSV file, Illegal records should be ignored
 func ReadFile(fileName string) (record [][]string, err error) {
 	f, err := os.Open(fileName)
 	if err != nil {
@@ -25,7 +25,9 @@ func ReadFile(fileName string) (record [][]string, err error) {
 			log.Fatal(err)
 			continue
 		}
-		records = append(records, record)
+		if record[0][0] != '#' {
+			records = append(records, record)
+		}
 	}
 	return records, err
 }
