@@ -1,4 +1,8 @@
-#ACTION,KEY,PARENT_KEY,TITLE,DESCRIPTION,ASSIGNEE,ORIGINAL_ESTIMATES, JSON_PAYLOAD
-New,,MCPU-AAAA,Test Ticket,Sample Body of Test Ticket,akash.pandey,1d,
-New,,MCPU-BBBB,Test Ticket,Sample Body of Test Ticket,akash.pandey,1d,
-MODIFY,MCPU-AAAA,,,,,,"{assignee: rajesh.bhatt, originalEstimates: 2d}"
+#ACTION,TYPE,PROJECT,KEY,PARENT_KEY,TITLE,DESCRIPTION,ASSIGNEE,ORIGINAL_ESTIMATES,JSON_PAYLOAD
+#CREATE,Sub-task,MCPU,,MCPU-AKASH,"UI: Termination: Reg Fields in Accept View","Configure Termination-Accept view as per Requirements specified in Credit GUI Framework Specification.docx",akash.pandey,1d,
+#CREATE,Sub-task,MCPU,,MCPU-7275,"UI: Termination: Reg Fields in Accept Submission","Submission, View and integration esting for Termination - Reg Reporting Accept.",akash.pandey,1d,
+CREATE,Sub-task,MCPU,,MCPU-8898,"Readonly view","Fix Alignment for Editable view",akash.pandey,1d,
+CREATE,Sub-task,MCPU,,MCPU-8898,"Editable view","Fix Alignment for Readonly view",akash.pandey,1d,
+CREATE,Sub-task,MCPU,,MCPU-8898,"Integrate new version in app cofnfirms","Integration & Sanity check with new version in appconfirms",akash.pandey,1d,
+#UPDATE,,MCPU,MCPU-AAAA,,,,,,"{assignee: rajesh.bhatt, originalEstimates: 2d}"
+#GET,,,MCPU-7275,,,,,,
