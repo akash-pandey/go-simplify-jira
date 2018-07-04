@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"log"
 	"syscall"
+	"time"
 
-	"com.gitlab/akash.pandey/go-simplify-jira/csv"
 	jira "github.com/andygrunwald/go-jira"
+	"gitlab.com/akash.pandey/go-simplify-jira/csv"
 	"golang.org/x/crypto/ssh/terminal"
 )
 
@@ -154,6 +155,11 @@ func getIssueFieldsForUpdate(record []string) *jira.Issue {
 }
 
 func getIssueFieldsForCreate(record []string) *jira.Issue {
+	const format = "2006-Jan-02" // TODO - parameterize
+	dueDate, err := time.Parse(format, record[9])
+	if err != nil {
+		log.Fatal(err)
+	}
 	return &jira.Issue{
 		Fields: &jira.IssueFields{
 			Type: jira.IssueType{
@@ -174,6 +180,7 @@ func getIssueFieldsForCreate(record []string) *jira.Issue {
 			TimeTracking: &jira.TimeTracking{
 				OriginalEstimate: record[8],
 			},
+			Duedate: jira.Date(dueDate),
 		},
 	}
 }
