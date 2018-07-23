@@ -3,7 +3,7 @@ package csv_test
 import (
 	"fmt"
 
-	"com.gitlab/akash.pandey/go-simplify-jira/csv"
+	"gitlab.com/akash.pandey/go-simplify-jira/csv"
 )
 
 func ExampleReadFile() {
